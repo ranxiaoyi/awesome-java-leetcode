@@ -48,6 +48,34 @@ class Solution {
 }
 ```
 
+```java
+public class LongestCommonPrefix {
+    public static void main(String[] args) {
+        String[] arrs = {"flower", "flow", "flight"};
+        StringBuilder result = new StringBuilder();
+        for (int j = 0; j < Integer.MAX_VALUE; j++) {
+            if (j >= arrs[0].length()) {
+                break;
+            }
+            char a = arrs[0].charAt(j);
+            for (int i = 0; i < arrs.length; i++) {
+                char c = arrs[i].charAt(j);
+                if (c == '\0') {
+                    break;
+                }
+                a = (char) (a & c);
+            }
+            if (arrs[0].charAt(j) != a) {
+                break;
+            } else {
+                result.append(a);
+            }
+        }
+        System.out.println(result);
+    }
+}
+```
+
 
 ## 结语
 
